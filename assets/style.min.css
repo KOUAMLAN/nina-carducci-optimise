@@ -3,7 +3,7 @@ body {
   margin: auto;
   font-family: 'Inter', Arial, sans-serif;
   box-sizing: border-box;
-  color: #222; /* Contraste élevé sur #fff */
+  color: #222;
   background: #fff;
 }
 
@@ -44,19 +44,18 @@ body {
 
 /* Contraste renforcé sur tous les liens de navigation */
 .nav a,
-.nav a:visited {
-  color: #0b254b; /* Contraste élevé sur blanc */
-  text-decoration: none;
-  font-weight: 500;
-  padding: .5rem 1rem;
-  transition: color .2s, background .2s;
-  background: transparent;
+.nav a:visited,
+a, a:visited {
+  color: #0b254b !important;
+  background-color: transparent;
+  text-decoration: underline;
 }
 
+/* Hover/focus : fond jaune, texte foncé */
 .nav a:hover,
 .nav a:focus {
-  color: #533600; /* Plus foncé pour contraste renforcé sur #ffe066 */
-  background: #ffe066;
+  color: #533600 !important;
+  background: #ffe066 !important;
   text-decoration: underline;
 }
 
@@ -116,7 +115,7 @@ body {
 .carousel-control-next-icon {
   width: 48px;
   height: 48px;
-  background-color: #856404; /* Fond foncé pour contraste avec l’icône claire */
+  background-color: #856404 !important;
   border-radius: 50%;
   filter: invert(100%) grayscale(100%);
   background-size: 60% 60%;
@@ -143,6 +142,7 @@ body {
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background: #145a6d !important;
+  color: #fff !important;
 }
 
 .visually-hidden {
@@ -152,7 +152,7 @@ body {
 
 #about {
   display: flex;
-  background-color: #d9b38c; /* Contraste suffisant avec #222 */
+  background-color: #d9b38c;
   padding: 100px;
   position: relative;
   gap: 40px;
@@ -327,7 +327,7 @@ body {
 
 #services {
   margin: auto;
-  background-color: #7aa3a9; /* Contraste suffisant avec #222 */
+  background-color: #7aa3a9;
   position: relative;
 }
 
@@ -370,7 +370,7 @@ body {
 
 #contact {
   margin: auto;
-  background-color: #bfb67a; /* Contraste suffisant avec #222 */
+  background-color: #bfb67a;
   position: relative;
   padding: 100px 100px;
   color: #222;
@@ -419,7 +419,7 @@ form input,
 form textarea {
   width: 100%;
   background-color: #fff;
-  border: solid 1px #666;
+  border: solid 1px #888 !important;
   border-radius: 4px;
   height: 2.5em;
   margin-bottom: 20px;
@@ -436,8 +436,8 @@ form textarea {
 
 input[type=submit],
 button[type=submit] {
-  background-color: #856404;
-  color: #fff;
+  background-color: #856404 !important;
+  color: #fff !important;
   padding: .5em 1.5em;
   border: none;
   border-radius: 4px;
@@ -448,13 +448,8 @@ button[type=submit] {
 
 input[type=submit]:hover,
 button[type=submit]:hover {
-  background-color: #145a6d;
-}
-
-a, a:visited {
-  color: #0b254b;
-  background-color: transparent;
-  text-decoration: underline;
+  background-color: #145a6d !important;
+  color: #fff !important;
 }
 
 a.phone-link {
@@ -498,6 +493,6 @@ a.phone-link {
 }
 
 /* Responsive (inchangé, à compléter selon vos besoins) */
-@media all and (max-width: 1180px) { /* ... */ }
-@media all and (max-width: 1000px) { /* ... */ }
-@media all and (max-width: 650px) { /* ... */ }
+@media all and (max-width: 1180px) { }
+@media all and (max-width: 1000px) { }
+@media all and (max-width: 650px) { }
