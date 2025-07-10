@@ -42,6 +42,7 @@ body {
   padding-inline: 10px;
 }
 
+/* Contraste renforcé sur tous les liens de navigation */
 .nav a,
 .nav a:visited {
   color: #0b254b; /* Contraste élevé sur blanc */
@@ -222,6 +223,7 @@ body {
   justify-content: center;
 }
 
+/* Contraste renforcé sur les boutons de filtre */
 .gallery-filters button {
   background: #fff;
   border: 1px solid #856404;
