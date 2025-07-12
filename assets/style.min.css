@@ -42,19 +42,20 @@ body {
   padding-inline: 10px;
 }
 
-.nav a {
-  color: #0b254b;
-  text-decoration: none;
-  font-weight: 500;
-  padding: .5rem 1rem;
-  transition: color .2s, background .2s;
-  background: transparent;
+/* Contraste renforcé sur tous les liens de navigation */
+.nav a,
+.nav a:visited,
+a, a:visited {
+  color: #0b254b !important;
+  background-color: transparent;
+  text-decoration: underline;
 }
 
+/* Hover/focus : fond jaune, texte foncé */
 .nav a:hover,
 .nav a:focus {
-  color: #856404;
-  background: #ffe066;
+  color: #533600 !important;
+  background: #ffe066 !important;
   text-decoration: underline;
 }
 
@@ -80,7 +81,7 @@ body {
   background: #fff;
 }
 
-/* --- CORRECTION : Centrage vertical des flèches du carrousel --- */
+/* Centrage vertical des flèches du carrousel */
 .carousel-control-prev,
 .carousel-control-next {
   top: 50%;
@@ -100,13 +101,11 @@ body {
   padding: 0;
 }
 
-/* Pour la flèche droite, on la place à droite */
 .carousel-control-next {
   left: auto;
   right: 1rem;
 }
 
-/* Pour la flèche gauche, on la place à gauche */
 .carousel-control-prev {
   right: auto;
   left: 1rem;
@@ -116,15 +115,13 @@ body {
 .carousel-control-next-icon {
   width: 48px;
   height: 48px;
-  background-color: #856404;
+  background-color: #856404 !important;
   border-radius: 50%;
   filter: invert(100%) grayscale(100%);
   background-size: 60% 60%;
   background-position: center;
   background-repeat: no-repeat;
 }
-
-/* --- FIN correction carrousel --- */
 
 .carousel-btn {
   background: #856404 !important;
@@ -145,6 +142,7 @@ body {
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
   background: #145a6d !important;
+  color: #fff !important;
 }
 
 .visually-hidden {
@@ -225,6 +223,7 @@ body {
   justify-content: center;
 }
 
+/* Contraste renforcé sur les boutons de filtre */
 .gallery-filters button {
   background: #fff;
   border: 1px solid #856404;
@@ -420,7 +419,7 @@ form input,
 form textarea {
   width: 100%;
   background-color: #fff;
-  border: solid 1px #666;
+  border: solid 1px #888 !important;
   border-radius: 4px;
   height: 2.5em;
   margin-bottom: 20px;
@@ -437,8 +436,8 @@ form textarea {
 
 input[type=submit],
 button[type=submit] {
-  background-color: #856404;
-  color: #fff;
+  background-color: #856404 !important;
+  color: #fff !important;
   padding: .5em 1.5em;
   border: none;
   border-radius: 4px;
@@ -449,13 +448,8 @@ button[type=submit] {
 
 input[type=submit]:hover,
 button[type=submit]:hover {
-  background-color: #145a6d;
-}
-
-a, a:visited {
-  color: #0b254b;
-  background-color: transparent;
-  text-decoration: underline;
+  background-color: #145a6d !important;
+  color: #fff !important;
 }
 
 a.phone-link {
@@ -474,7 +468,36 @@ a.phone-link {
   display: none !important;
 }
 
-/* Responsive : inchangé */
-@media all and (max-width: 1180px) {  }
-@media all and (max-width: 1000px) {  }
+/* Mode contraste élevé pour accessibilité avancée */
+@media (prefers-contrast: more) {
+  body {
+    color: #000;
+    background: #fff;
+  }
+  .nav a, .nav a:visited {
+    color: #000;
+  }
+  .nav a:hover,
+  .nav a:focus {
+    color: #000;
+    background: #ffe066;
+  }
+  input[type=submit],
+  button[type=submit],
+  .carousel-btn,
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+  .gallery-filters button.active,
+  .gallery-filters button:hover {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}
+
+/* Responsive (inchangé, à compléter selon vos besoins) */
+@media all and (max-width: 1180px) { }
+@media all and (max-width: 1000px) { }
 @media all and (max-width: 650px) { }
