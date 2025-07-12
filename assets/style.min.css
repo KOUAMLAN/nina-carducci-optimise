@@ -469,7 +469,12 @@ a.phone-link {
   color: #222;
 }
 
+/* Masque le bloc contact dans le footer */
+.hide-contact {
+  display: none !important;
+}
+
 /* Responsive : inchangé */
-@media all and (max-width: 1180px) { ... }
-@media all and (max-width: 1000px) { ... }
-@media all and (max-width: 650px) { ... }
+@media all and (max-width: 1180px) {  }
+@media all and (max-width: 1000px) {  }
+@media all and (max-width: 650px) { }
