@@ -1,0 +1,503 @@
+body {
+  max-width: 1920px;
+  margin: auto;
+  font-family: 'Inter', Arial, sans-serif;
+  box-sizing: border-box;
+  color: #222;
+  background: #fff;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.top-header {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  border-bottom: 1px solid #ccc;
+}
+
+.top-header .name {
+  font-size: 26px;
+  color: #222;
+}
+
+.nav ul {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  align-items: center;
+}
+
+.nav li {
+  padding-inline: 10px;
+}
+
+/* Contraste renforcé sur tous les liens de navigation */
+.nav a,
+.nav a:visited,
+a, a:visited {
+  color: #0b254b !important;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+/* Hover/focus : fond jaune, texte foncé */
+.nav a:hover,
+.nav a:focus {
+  color: #533600 !important;
+  background: #ffe066 !important;
+  text-decoration: underline;
+}
+
+.social-link img {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.carousel img {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  background: #fff;
+}
+
+/* Centrage vertical des flèches du carrousel */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 50%;
+  bottom: auto;
+  left: 1rem;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  opacity: 1;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.carousel-control-next {
+  left: auto;
+  right: 1rem;
+}
+
+.carousel-control-prev {
+  right: auto;
+  left: 1rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #856404 !important;
+  border-radius: 50%;
+  filter: invert(100%) grayscale(100%);
+  background-size: 60% 60%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.carousel-btn {
+  background: #856404 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+
+.carousel-btn:hover,
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: #145a6d !important;
+  color: #fff !important;
+}
+
+.visually-hidden {
+  color: #222 !important;
+  background: #fff !important;
+}
+
+#about {
+  display: flex;
+  background-color: #d9b38c;
+  padding: 100px;
+  position: relative;
+  gap: 40px;
+}
+
+.picture.left::before {
+  content: '';
+  background-color: #b3783f;
+  width: 374px;
+  height: 329px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.picture {
+  flex: 1;
+  margin: 0 20px;
+  z-index: 0;
+}
+
+.picture img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  object-fit: cover;
+  display: block;
+}
+
+#about-me {
+  flex: 2;
+}
+
+.about-me__title {
+  margin-top: 1em;
+  margin-bottom: 60px;
+  font-size: 30px;
+  font-family: 'Spectral', serif;
+  color: #222;
+}
+
+.about-me__introduction {
+  font-family: 'Spectral', serif;
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+  width: 60%;
+  color: #222;
+}
+
+#about-me p {
+  width: 80%;
+  font-size: 13px;
+  color: #222;
+}
+
+.title {
+  text-align: center;
+  padding-block: 2em;
+  color: #222;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+}
+
+/* Contraste renforcé sur les boutons de filtre */
+.gallery-filters button {
+  background: #fff;
+  border: 1px solid #856404;
+  color: #856404;
+  padding: .5em 1.5em;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background .2s, color .2s;
+}
+
+.gallery-filters button.active,
+.gallery-filters button:hover {
+  background: #856404;
+  color: #fff;
+}
+
+.gallery-item {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: .5em;
+  background: #fff;
+  cursor: pointer;
+  transition: box-shadow .2s;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,.7);
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox .inner {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+#lightbox img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.15);
+  background: #fff;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  background: #856404;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quote {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  width: 70%;
+  margin: auto;
+  padding-block: 3em;
+  color: #222;
+}
+
+.quote__text {
+  font-family: 'Spectral', serif;
+  font-style: italic;
+  font-weight: 300;
+  color: #222;
+}
+
+.quote__author {
+  font-family: 'Spectral', serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: #222;
+}
+
+#services {
+  margin: auto;
+  background-color: #7aa3a9;
+  position: relative;
+}
+
+#services .container::before {
+  content: '';
+  background-color: #124854;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#services .container {
+  justify-content: space-between;
+  display: flex;
+  padding: 2em 0;
+  gap: 2em;
+}
+
+.service {
+  background-color: #fff;
+  max-width: 390px;
+  width: 30%;
+  height: 337px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  z-index: 1;
+}
+
+.service__description {
+  margin-bottom: 1em;
+  color: #222;
+}
+
+#contact {
+  margin: auto;
+  background-color: #bfb67a;
+  position: relative;
+  padding: 100px 100px;
+  color: #222;
+}
+
+#contact .container {
+  display: flex;
+  gap: 40px;
+}
+
+.picture.right::before {
+  content: '';
+  background-color: #8a7f2a;
+  width: 374px;
+  height: 329px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.camera_img {
+  width: 374px;
+  height: 329px;
+}
+
+.form-container {
+  flex: 2;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: flex-start;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: .2em;
+  font-family: 'Spectral', serif;
+  color: #222;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  background-color: #fff;
+  border: solid 1px #888 !important;
+  border-radius: 4px;
+  height: 2.5em;
+  margin-bottom: 20px;
+  padding: .5em;
+  font-size: 1em;
+  color: #222;
+}
+
+form textarea {
+  height: 5em;
+  line-height: 1.5em;
+  font-size: 1.1em;
+}
+
+input[type=submit],
+button[type=submit] {
+  background-color: #856404 !important;
+  color: #fff !important;
+  padding: .5em 1.5em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+input[type=submit]:hover,
+button[type=submit]:hover {
+  background-color: #145a6d !important;
+  color: #fff !important;
+}
+
+a.phone-link {
+  background-color: #fffbe6 !important;
+  color: #0b254b !important;
+  padding: 0.2em 0.6em;
+  border-radius: 4px;
+}
+
+.informations {
+  color: #222;
+}
+
+/* Masque le bloc contact dans le footer */
+.hide-contact {
+  display: none !important;
+}
+
+/* Mode contraste élevé pour accessibilité avancée */
+@media (prefers-contrast: more) {
+  body {
+    color: #000;
+    background: #fff;
+  }
+  .nav a, .nav a:visited {
+    color: #000;
+  }
+  .nav a:hover,
+  .nav a:focus {
+    color: #000;
+    background: #ffe066;
+  }
+  input[type=submit],
+  button[type=submit],
+  .carousel-btn,
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #000 !important;
+    color: #fff !important;
+  }
+  .gallery-filters button.active,
+  .gallery-filters button:hover {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}
+
+/* Responsive (inchangé, à compléter selon vos besoins) */
+@media all and (max-width: 1180px) { }
+@media all and (max-width: 1000px) { }
+@media all and (max-width: 650px) { }
